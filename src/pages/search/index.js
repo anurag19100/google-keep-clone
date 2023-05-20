@@ -11,9 +11,10 @@ import { TextInfo, TextContainer } from "./style";
 const Search = ({ queryParams }) => {
   const dispatch = useDispatch();
   const { allNotes } = useSelector((state) => state);
-  const fetchNotes = React.useCallback(() => dispatch(fetchAllNotes()), [
-    dispatch
-  ]);
+  const fetchNotes = React.useCallback(
+    () => dispatch(fetchAllNotes()),
+    [dispatch]
+  );
 
   React.useEffect(() => {
     fetchNotes();
